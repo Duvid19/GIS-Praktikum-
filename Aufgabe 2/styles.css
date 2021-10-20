@@ -1,0 +1,31 @@
+.Navigation {
+    display: flex;
+    justify-content: flex-end;
+    flex-direction: row;
+    height: 70px;
+    align-items: center;
+    z-index: 1;
+    
+    
+}
+
+.Navigation a{
+    padding: 0 10px;
+    text-decoration: none;
+    color: gray;
+    z-index: 1;
+
+}
+.Navigation a:hover{
+    color: green;
+    background-color: rgba(93, 199, 171, 50);
+    
+}
+#Bild1{
+   position: absolute;
+    right: 0;
+    bottom: 0;
+    min-width: 100%;
+    min-height: 100%;
+    z-index: -1;
+}
