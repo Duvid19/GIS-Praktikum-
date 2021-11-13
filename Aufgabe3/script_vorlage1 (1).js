@@ -70,7 +70,7 @@ function AufgabeD(array, name) {
     }
     return false;
 }
-console.log(AufgabeD(events, "Mark arsch"));
+console.log(AufgabeD(events, "Bee Gees"));
 // Lösung e) ...
 function factorial(n) {
     let result = 1;
@@ -78,9 +78,9 @@ function factorial(n) {
         result = result * n;
         n--;
     }
-    console.log(result);
+    console.log("Die Fakultät lautet:" + result);
 }
-factorial(5);
+factorial(4);
 // Lösung f) ...
 function Aufgabef() {
     let anzahl = 0;
@@ -90,7 +90,7 @@ function Aufgabef() {
             anzahl++;
         }
     }
-    console.log('Anzahl der Zahlen die durch 3 teilbar sind:' + anzahl);
+    console.log('Anzahl der Zahlen die durch 3 teilbar sind:' + " " + anzahl);
 }
 Aufgabef();
 // Lösung g) ...
