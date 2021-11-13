@@ -1,0 +1,6 @@
+@mixin text($color1, $color2) {
+    color: $color1;
+    font-size: 10px;
+    background-color: $color2;
+    
+}
