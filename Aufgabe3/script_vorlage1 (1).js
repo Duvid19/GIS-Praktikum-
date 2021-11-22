@@ -78,7 +78,7 @@ function factorial(n) {
         result = result * n;
         n--;
     }
-    console.log("Die Fakultät lautet:" + result);
+    console.log("Die Fakultät lautet:" + " " + result);
 }
 factorial(4);
 // Lösung f) ...
