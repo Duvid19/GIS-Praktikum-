@@ -10,3 +10,7 @@
  ## Aufgabe 3
  * Link zum Rootordner: https://github.com/Duvid19/GIS-Praktikum-/blob/main/Aufgabe3/script_vorlage1%20(1).js
  * Link zur Webseite: https://github.com/Duvid19/GIS-Praktikum-/blob/main/Aufgabe3/index.html
+
+ ## Aufgabe 4
+ * Link zum Rootordner:
+
