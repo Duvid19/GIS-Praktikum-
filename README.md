@@ -12,5 +12,9 @@
  * Link zur Webseite: https://github.com/Duvid19/GIS-Praktikum-/blob/main/Aufgabe3/index.html
 
  ## Aufgabe 4
- * Link zum Rootordner:
+ * Link zum Rootordner: https://github.com/Duvid19/GIS-Praktikum-/blob/main/Aufgabe4/script.ts
+ * Link zur Webseite: https://github.com/Duvid19/GIS-Praktikum-/blob/main/Aufgabe4/index.html
 
+ ## Aufgabe 5
+ * Link zum Rootordner: https://github.com/Duvid19/GIS-Praktikum-/blob/main/Aufgabe4/script.ts
+ * Link zur Webseite: https://github.com/Duvid19/GIS-Praktikum-/blob/main/Aufgabe4/index.html
