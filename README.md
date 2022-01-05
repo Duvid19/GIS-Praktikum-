@@ -22,3 +22,7 @@
  ## Aufgabe 7: 
  * Link zum Rootordner: https://github.com/Duvid19/GIS-Praktikum-/blob/main/Aufgabe7
  * Link zur Webseite: https://github.com/Duvid19/GIS-Praktikum-/blob/main/Aufgabe7/index.html
+
+## Aufgabe 8: 
+ * Link zum Rootordner: https://github.com/Duvid19/GIS-Praktikum-/blob/main/Aufgabe8
+ * Link zur Webseite: https://github.com/Duvid19/GIS-Praktikum-/blob/main/Aufgabe8/Eventpage.html
