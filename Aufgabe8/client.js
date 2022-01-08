@@ -9,15 +9,18 @@ var localStoragePraktikum;
     let id = 0;
     let button = document.getElementById("button");
     async function getFromServer() {
-        await fetch("http://localhost:3000/concertEvents")
+        await fetch("http://localhost:3000/concertEvent")
             .then(response => response.json())
             .then(data => {
-            eventArray = data;
+            let responseData = data;
             console.log(eventArray);
+            for (let entry of data) {
+                renderListe(new EventTable(entry.interpret, entry.price, entry.date));
+            }
+            responseData;
         });
-        renderListe;
     }
-    class eventTable {
+    class EventTable {
         interpret;
         price;
         date;
@@ -54,7 +57,7 @@ var localStoragePraktikum;
             alert("Felder bitte ausfüllen");
             return;
         }
-        let newEvent = new eventTable(interpret.value, price.value, date.value);
+        let newEvent = new EventTable(interpret.value, price.value, date.value);
         newEvent.addToList();
         renderListe(newEvent);
         getFromServer();
@@ -90,7 +93,7 @@ var localStoragePraktikum;
     }
     async function sendToServer() {
         try {
-            await fetch("http://127.0.0.1:3000/concertEvents", {
+            await fetch("http://127.0.0.1:3000/concertEvent", {
                 method: "POST",
                 headers: {},
                 body: JSON.stringify({

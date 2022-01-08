@@ -3,7 +3,7 @@ import * as mongo from "mongodb";
 
 const hostname: string = "127.0.0.1"; // localhost
 const port: number = 3000;
-const mongoUrl: string = "mongodb://localhost:27017"; // für lokale MongoDB
+const mongoUrl: string = "mongodb://127.0.0.1:27017"; // für lokale MongoDB
 let mongoClient: mongo.MongoClient = new mongo.MongoClient(mongoUrl);
 
 
@@ -22,7 +22,6 @@ async function dbFind(
   response.setHeader("Content-Type", "application/json");
   response.write(JSON.stringify(result));
 }
-
 
 const server: http.Server = http.createServer(
   async (request: http.IncomingMessage, response: http.ServerResponse) => {
@@ -44,6 +43,7 @@ const server: http.Server = http.createServer(
             );
             break;
           case "POST":
+            // tslint:disable-next-line: typedef
             let jsonString = "";
             request.on("data", data => {
               jsonString += data;
@@ -58,7 +58,7 @@ const server: http.Server = http.createServer(
         }
         break;
       }
-      case "/events": {
+      case "/concertEvents": {
         await mongoClient.connect();
         switch (request.method) {
           case "GET":

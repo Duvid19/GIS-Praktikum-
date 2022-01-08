@@ -7,18 +7,22 @@ namespace localStoragePraktikum {
     let table: HTMLElement = document.getElementById("box1") as HTMLElement;
     let id: number = 0;
     let button: HTMLElement = document.getElementById("button") as HTMLElement;
+  
 
     async function getFromServer(): Promise<void> {
-       await fetch("http://localhost:3000/concertEvents")
+       await fetch("http://localhost:3000/concertEvent")
         .then(response => response.json())
         .then(data => {
-            eventArray = data;
-            console.log(eventArray);
-            renderListe;
+           let responseData: { interpret: string, price: string, date: string }[] = data;
+           console.log(eventArray);
+           for (let entry of data){
+            renderListe(new EventTable(entry.interpret, entry.price, entry.date));
+           }
+           responseData;
         });
     }
     
-    class eventTable {
+    class EventTable {
         private interpret: string;
         private price: string;
         private date: string;
@@ -62,7 +66,7 @@ namespace localStoragePraktikum {
             alert("Felder bitte ausfüllen");
             return;
         }
-        let newEvent: eventTable = new eventTable(interpret.value, price.value, date.value);
+        let newEvent: EventTable = new EventTable(interpret.value, price.value, date.value);
         newEvent.addToList();
         renderListe(newEvent);
         getFromServer();
@@ -73,14 +77,14 @@ namespace localStoragePraktikum {
         let element: HTMLElement = event.currentTarget as HTMLElement;
         let parent: HTMLElement = (<HTMLElement>event.target).parentElement;
         let elementId: string = element.getAttribute("data-id");
-        eventArray.forEach((eventelem: eventTable, index: number) => {
+        eventArray.forEach((eventelem: EventTable, index: number) => {
             if (eventelem.getId() == elementId) eventArray.splice(index, 1);
         });
         parent.remove();
         
     }
 
-    function renderListe(input: eventTable) {
+    function renderListe(input: EventTable) {
         let row: HTMLElement = document.createElement("tr");
         let interpret: HTMLElement = document.createElement("td");
         let price: HTMLElement = document.createElement("td");
@@ -102,7 +106,7 @@ namespace localStoragePraktikum {
     }
     async function sendToServer(): Promise<void> {
         try {
-            await fetch("http://127.0.0.1:3000/concertEvents", {
+            await fetch("http://127.0.0.1:3000/concertEvent", {
                 method: "POST",
                 headers:  {                   
                 },
