@@ -6,6 +6,11 @@ const port: number = 3000;
 const mongoUrl: string = "mongodb://127.0.0.1:27017"; // für lokale MongoDB
 let mongoClient: mongo.MongoClient = new mongo.MongoClient(mongoUrl);
 
+async function connect() {
+  await mongoClient.connect();
+  console.log("Connected successfully to server");
+}
+connect();
 
 async function dbFind(
   db: string,

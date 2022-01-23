@@ -10,7 +10,7 @@ namespace localStoragePraktikum {
   
 
     async function getFromServer(): Promise<void> {
-       await fetch("http://localhost:3000/concertEvent")
+       await fetch("http://127.0.0.1:3000/concertEvents")
         .then(response => response.json())
         .then(data => {
            let responseData: { interpret: string, price: string, date: string }[] = data;
@@ -21,7 +21,8 @@ namespace localStoragePraktikum {
            responseData;
         });
     }
-    
+    getFromServer();
+
     class EventTable {
         private interpret: string;
         private price: string;
@@ -69,6 +70,7 @@ namespace localStoragePraktikum {
         let newEvent: EventTable = new EventTable(interpret.value, price.value, date.value);
         newEvent.addToList();
         renderListe(newEvent);
+        console.log("nice");
         getFromServer();
         sendToServer();
     }
@@ -124,6 +126,7 @@ namespace localStoragePraktikum {
                     return false;
                 }
             });
+            console.log("cool");
         } catch (error) {
             console.log(error);
             return;

@@ -9,7 +9,7 @@ var localStoragePraktikum;
     let id = 0;
     let button = document.getElementById("button");
     async function getFromServer() {
-        await fetch("http://localhost:3000/concertEvent")
+        await fetch("http://127.0.0.1:3000/concertEvents")
             .then(response => response.json())
             .then(data => {
             let responseData = data;
@@ -20,6 +20,7 @@ var localStoragePraktikum;
             responseData;
         });
     }
+    getFromServer();
     class EventTable {
         interpret;
         price;
@@ -60,6 +61,7 @@ var localStoragePraktikum;
         let newEvent = new EventTable(interpret.value, price.value, date.value);
         newEvent.addToList();
         renderListe(newEvent);
+        console.log("nice");
         getFromServer();
         sendToServer();
     }
@@ -110,6 +112,7 @@ var localStoragePraktikum;
                     return false;
                 }
             });
+            console.log("cool");
         }
         catch (error) {
             console.log(error);
